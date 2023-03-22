@@ -99,8 +99,7 @@ class TestCreate(unittest.TestCase):
         f_storage.empty()
 
         with patch('sys.stdout', new=StringIO()) as out_put:
-            HBNBCommand().onecmd("create Place name=\"California\
-                    " city_id=\"0001\" user_id=\"0001\"")
+            HBNBCommand().onecmd("create Place name=\"California\" city_id=\"0001\" user_id=\"0001\"")
 
         clean_output = out_put.getvalue()
         self.assertRegex(clean_output, r"\w{8}-\w{4}-\w{4}-\w{4}-\w{12}\n")
