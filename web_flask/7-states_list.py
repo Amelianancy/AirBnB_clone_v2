@@ -2,14 +2,13 @@
 """A script that starts a web flask application"""
 from flask import Flask, render_template
 from models import storage
-from models.state import state
+from models.state import State
 app = Flask(__name__)
 
 
 @app.route('/states_list', strict_slashes=False)
 def states_list():
-    unsorted_states = storage.all(State)
-    (unsorted_states, key=lambda state: state.name)
+    states = storage.all(State).values()
     return render_template('7-states_list.html', states=states)
 
 
