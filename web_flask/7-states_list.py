@@ -13,7 +13,7 @@ def states_list():
 
 
 @app.teardown_appcontext
-def teardown(exc):
+def teardown(exception=None):
     storage.close()
 
 
