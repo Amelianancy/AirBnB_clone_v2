@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""A script that starts a web flask application"""
+"""A script that starts a web flask application
+listens to 0.0.0.0:5000
+"""
 
 
 from flask import Flask, render_template
